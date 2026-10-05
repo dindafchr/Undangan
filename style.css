@@ -1,0 +1,74 @@
+:root{--pine:#1f3a32;--sage:#dde5da;--gold:#b8975a;--ink:#17211d;--paper:#f7f8f4;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:300 1rem/1.7 var(--sans);color:var(--ink);background:var(--paper);text-align:center;
+padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+body.locked{overflow:hidden}
+h1,h2,h3,.names,.quote,.acct{font-family:var(--serif);font-weight:400;margin:0}
+h2{font-size:2rem;margin-bottom:1.2rem}
+h3{font-size:1.6rem}
+i{font-style:italic;color:var(--gold);padding:0 .25em}
+.small{font-size:.95rem;margin:.4rem 0;opacity:.8}
+.hint{font-size:.9rem;opacity:.65;margin:.5rem 0 0}
+.gap{margin-top:2.2rem}
+
+.cover{position:fixed;inset:0;z-index:20;display:grid;place-items:center;color:#fff;padding:2rem;
+background:linear-gradient(rgba(31,58,50,.72),rgba(31,58,50,.88)),var(--cover,none) center/cover,var(--pine);
+transition:transform 1s ease}
+.cover.gone{transform:translateY(-100%)}
+.cover h1{font-size:clamp(3rem,15vw,5.5rem);line-height:1.05;margin:.6rem 0 2rem}
+.cover h1 i{display:block;font-size:.5em}
+.guest{font-family:var(--serif);font-size:1.7rem;margin:0 0 2rem}
+
+.btn{font:500 .95rem var(--sans);letter-spacing:.04em;border:0;border-radius:2px;padding:.95rem 2rem;background:var(--pine);color:#fff;cursor:pointer;min-height:48px}
+.btn.light{background:#fff;color:var(--pine)}
+.btn.ghost{background:transparent;color:var(--pine);border:1px solid var(--pine)}
+.btn:disabled{opacity:.5}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.hero{min-height:100svh;display:grid;align-content:center;justify-items:center;padding:2rem;color:#fff;
+background:linear-gradient(rgba(23,33,29,.35),rgba(23,33,29,.7)),var(--hero,none) center/cover,var(--pine)}
+.names{font-size:clamp(3rem,14vw,5rem);line-height:1.1;margin:.5rem 0 1rem}
+.names i{display:block;font-size:.45em}
+
+.sec{padding:4.5rem 1.5rem;max-width:640px;margin:0 auto}
+.dark,.tint{max-width:none}
+.dark{background:var(--pine);color:#fff}
+.tint{background:var(--sage)}
+.tint>*,.dark>*{max-width:560px;margin-left:auto;margin-right:auto}
+.couple img{width:min(280px,70%);aspect-ratio:3/4;object-fit:cover;border-radius:140px 140px 0 0;margin-bottom:1.5rem}
+.quote{font-size:1.5rem;font-style:italic;margin-bottom:2.2rem}
+.amp{display:block;font:italic 2rem var(--serif);margin:1rem 0}
+
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.count div{font-size:.8rem}
+.count b{display:block;font:400 clamp(2.2rem,11vw,3.4rem)/1.1 var(--serif);color:var(--gold)}
+
+.big-link{display:inline-block;font:1.5rem/1.35 var(--serif);color:var(--pine);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px}
+.big-link.addr{font-size:1.15rem;font-family:var(--sans)}
+iframe{width:100%;height:260px;border:0;margin-top:1.5rem;border-radius:4px}
+
+form{display:grid;gap:1.2rem;text-align:left}
+label,legend{font-size:.9rem;display:grid;gap:.4rem}
+input:not([type=radio]),select,textarea{font:inherit;font-size:1rem;padding:.8rem;border:1px solid #b9c4b6;border-radius:2px;background:#fff;width:100%}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:.5rem}
+.radio{display:flex;gap:.6rem;align-items:center;font-size:1rem}
+.hp{position:absolute;left:-9999px}
+#status{text-align:center;min-height:1.5em;margin:0}
+
+.wish{text-align:left;padding:1rem 0;border-bottom:1px solid #d4dbd1}
+.wish b{font:600 1.2rem var(--serif);display:block}
+.wish p{margin:.2rem 0 0}
+#wishes{max-height:480px;overflow-y:auto}
+
+.gift-box{border:1px solid #c9d2c6;padding:1.4rem;margin-top:1.2rem}
+.acct{font-size:2rem;letter-spacing:.06em;margin:.3rem 0 1rem}
+.closing{padding-bottom:6rem}
+
+.music{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:10;width:48px;height:48px;border-radius:50%;border:0;background:var(--gold);color:#fff;font-size:1.3rem;cursor:pointer}
+.music.on{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
+.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}.cover{transition:none}.music.on{animation:none}html{scroll-behavior:auto}}

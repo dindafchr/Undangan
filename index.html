@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dinda & Riozi – Wedding Invitation</title>
+<meta property="og:title" content="The wedding of Dinda & Riozi">
+<meta property="og:description" content="You are invited. Open your invitation.">
+<meta name="theme-color" content="#1f3a32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<section id="cover" class="cover">
+  <div class="cover-in">
+    <p class="small">The wedding of</p>
+    <h1><span data-t="bride.short"></span><i>&amp;</i><span data-t="groom.short"></span></h1>
+    <p class="small">Dear</p>
+    <p class="guest" id="guest">Our dear guest</p>
+    <button class="btn light" id="open">Open invitation</button>
+  </div>
+</section>
+
+<main>
+  <section class="hero" id="hero">
+    <p class="small">We are getting married</p>
+    <h2 class="names"><span data-t="bride.short"></span><i>&amp;</i><span data-t="groom.short"></span></h2>
+    <p data-t="dateLabel"></p>
+  </section>
+
+  <section class="sec couple">
+    <img id="couplePhoto" alt="" hidden>
+    <p class="quote">Two paths, one home.</p>
+    <div class="person"><h3 data-t="bride.full"></h3></div>
+    <i class="amp">&amp;</i>
+    <div class="person"><h3 data-t="groom.full"></h3>
+      <p class="small">Son of <span data-t="groom.father"></span><br>and <span data-t="groom.mother"></span></p></div>
+  </section>
+
+  <section class="sec dark">
+    <h2>Counting down</h2>
+    <div class="count" id="count"><div><b id="d">0</b>days</div><div><b id="h">0</b>hours</div><div><b id="m">0</b>minutes</div><div><b id="s">0</b>seconds</div></div>
+  </section>
+
+  <section class="sec">
+    <h2>Save the date</h2>
+    <a class="big-link" id="calLink" target="_blank" rel="noopener"><span data-t="dateLabel"></span><br><span data-t="timeLabel"></span></a>
+    <p class="hint">Tap to add it to Google Calendar</p>
+    <h3 class="gap" data-t="venueName"></h3>
+    <a class="big-link addr" id="mapLink" target="_blank" rel="noopener" data-t="venueAddress"></a>
+    <p class="hint">Tap for directions in Google Maps</p>
+    <iframe id="mapFrame" title="Venue map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section class="sec tint" id="rsvp">
+    <h2>RSVP</h2>
+    <form id="rsvpForm" novalidate>
+      <label>Full name<input name="name" required autocomplete="name"></label>
+      <fieldset><legend>Will you attend?</legend>
+        <label class="radio"><input type="radio" name="attendance" value="Attending" checked> Attending</label>
+        <label class="radio"><input type="radio" name="attendance" value="Not attending"> Not attending</label>
+      </fieldset>
+      <label id="guestsWrap">Number of guests<select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+      <label>Wishes &amp; messages<textarea name="message" rows="4" maxlength="500"></textarea></label>
+      <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit" id="send">Send RSVP</button>
+      <p id="status" role="status"></p>
+    </form>
+  </section>
+
+  <section class="sec">
+    <h2>Wedding wishes</h2>
+    <div id="wishes"><p class="hint">No wishes yet. Be the first to write one.</p></div>
+  </section>
+
+  <section class="sec gift">
+    <h2>Wanna give us some gifts?</h2>
+    <p class="hint">Your presence is the best gift. If you'd like to send something, here is how.</p>
+    <div class="gift-box">
+      <p class="small"><span data-t="gift.bankName"></span> · <span data-t="gift.accountHolder"></span></p>
+      <p class="acct" data-t="gift.accountNumber"></p>
+      <button class="btn ghost" id="copy">Copy account number</button>
+    </div>
+    <div class="gift-box"><p class="small">Gift delivery address</p><p data-t="gift.deliveryAddress"></p></div>
+  </section>
+
+  <section class="sec dark closing">
+    <p>Thank you for celebrating with us.</p>
+    <h2 class="names"><span data-t="bride.short"></span><i>&amp;</i><span data-t="groom.short"></span></h2>
+  </section>
+</main>
+
+<button id="music" class="music" aria-label="Toggle music" hidden>♪</button>
+<audio id="audio" loop preload="none"></audio>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
